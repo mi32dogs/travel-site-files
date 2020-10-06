@@ -1,24 +1,26 @@
-import "../styles/styles.css"
-import "lazysizes"
-import MobileMenu from "./modules/MobileMenu"
-import RevealOnScroll from "./modules/RevealOnScroll"
-import StickyHeader from "./modules/StickyHeader"
+import '../styles/styles.css'
+import 'lazysizes'
+import MobileMenu from './modules/MobileMenu'
+import RevealOnScroll from './modules/RevealOnScroll'
+import StickyHeader from './modules/StickyHeader'
 
-new RevealOnScroll(document.querySelectorAll(".feature-item"), 75)
-new RevealOnScroll(document.querySelectorAll(".testimonial"), 60)
+alert('here')
+
+new RevealOnScroll(document.querySelectorAll('.feature-item'), 75)
+new RevealOnScroll(document.querySelectorAll('.testimonial'), 60)
 let mobileMenu = new MobileMenu()
 let stickyHeader = new StickyHeader()
 let modal
 
-document.querySelectorAll(".open-modal").forEach(el => {
-  el.addEventListener("click", e => {
+document.querySelectorAll('.open-modal').forEach(el => {
+  el.addEventListener('click', e => {
     e.preventDefault()
-    if (typeof modal == "undefined") {
-      import(/* webpackChunkName: "modal"  */ "./modules/Modal")
+    if (typeof modal == 'undefined') {
+      import(/* webpackChunkName: "modal"  */ './modules/Modal')
         .then(x => {
           modal = new x.default()
         })
-        .catch(() => console.log("error"))
+        .catch(() => console.log('error'))
       setTimeout(() => modal.openTheModal(), 20)
     } else {
       modal.openTheModal()
