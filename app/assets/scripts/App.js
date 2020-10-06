@@ -4,7 +4,20 @@ import MobileMenu from './modules/MobileMenu'
 import RevealOnScroll from './modules/RevealOnScroll'
 import StickyHeader from './modules/StickyHeader'
 
-alert('here')
+// react related code goes here
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+function MyAmzingComponent() {
+  return (
+    <div>
+      <h1>this is React</h1>
+      <p>React is great</p>
+    </div>
+  )
+}
+
+ReactDOM.render(<MyAmzingComponent />, document.querySelector('#my-react-example'))
 
 new RevealOnScroll(document.querySelectorAll('.feature-item'), 75)
 new RevealOnScroll(document.querySelectorAll('.testimonial'), 60)
